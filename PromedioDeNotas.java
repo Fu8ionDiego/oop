@@ -29,3 +29,26 @@ static double calcularPromedio(double [] notas){
     promedio = sumatoria/notas.length;
     return promedio;
 }
+
+static double[] solicitarNotas() throws IOException{
+    //TODO: solicitar la cantidad de examenes o notas al usuario
+    double notas[] = new double[3];
+    for(int i = 0; i<notas.length; i++){
+        imprimirMensaje("Digite la nota del examen numero " + (i+1));
+        notas[i] = Integer.parseInt(leerTexto);
+        ;
+    }
+    return notas;
+}
+
+static String definirResultado(double nota){
+    if(nota<70){
+        if(nota<600){
+            return "El estudiate perdio el curso con una nota de " + nota;
+        } else {
+            return "El estudiate debe de ir ampliacion con una nota de " + nota;
+        }
+    } else {
+        return "El estudiate aprobo el curso con una nota de " + nota;
+    }
+}
